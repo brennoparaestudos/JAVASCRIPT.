@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de verificação de Estrangeiro</title>
+</head>
+<body>
+    <h1>Sistema de verificação de Estrangeiro</h1>
+    Digite o país de seu nascimento: <input type="text" name="pais" id="ipais" >
+    <input type="button" value="Verificar" onclick="nascionalidade()">
+
+    <p id="resposta">
+
+    </p>
+
+    <script>
+        function nascionalidade(){
+            var país_nasc = document.getElementById('ipais')
+            var resp = document.getElementById('resposta')
+
+            resp.innerHTML = `Você nasceu em ${país_nasc.value}`
+
+            if(país_nasc.value == 'Brasil' || país_nasc.value == 'brasil'){
+                resp.innerHTML += ('<p>Você é <strong>BRASILEIRO</strong>!</p>')
+            } else {
+                resp.innerHTML += ('<p>Você é <strong>ESTRANGEIRO</strong>!</p>')
+            }
+        }
+    </script>
+</body>
+</html>
